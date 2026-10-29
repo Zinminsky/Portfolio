@@ -6,9 +6,9 @@ export const profile = {
   location: "Berlin, Germany",
   email: "kozin017@gmail.com",
   photo: "/images/Mr.Zin.jpg",
-  github: "https://github.com/", // TODO: add your GitHub profile URL
+   // TODO: add your GitHub profile URL
   linkedin: "https://www.linkedin.com/", // TODO: add your LinkedIn profile URL
-  cv: "/ZinMinAung_CV.pdf",
+  cv: "#",
   intro:
     "I design and build useful, engaging web experiences — from the first wireframe to clean, maintainable PHP and JavaScript in production.",
   summary:
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     blurb:
       "The largest project of my career: building and maintaining web interfaces in an enterprise environment, from content deployment and CMS work to debugging in production.",
     tags: ["Full-Stack", "PHP & MySQL", "Enterprise CMS"],
-    // link: "/casestudy-hdb",  ← enable once this case study is added to src/caseStudies.ts
+    link: "https://www.hdb.gov.sg/",
     accent: "#e07a5f",
   },
   {
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     blurb:
       "Rich, interactive brand animations — first built in Flash, later migrated to HTML5 and CSS for performance, accessibility and long-term compatibility.",
     tags: ["Animation", "WordPress", "Front-End"],
-    // link: "/casestudy-yeos",  ← enable once this case study is added to src/caseStudies.ts
+    link: "https://www.yeos.com.sg/",
     accent: "#f2cc8f",
   },
   {
