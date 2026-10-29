@@ -40,7 +40,8 @@ export const projects: Project[] = [
     blurb:
       "Product design for a grocery app built around fast, convenient everyday shopping — user research, flows and high-fidelity screens, developed alongside the design lead.",
     tags: ["Product Design", "UX Research", "Interaction Design"],
-    link: "https://zma-portfolio.netlify.app/casestudy-zupermart",
+    image: "/images/case2.png",
+    link: "/casestudy-zupermart", // case study page inside this site (see src/caseStudies.ts)
     accent: "#2aa198",
   },
   {
@@ -50,7 +51,7 @@ export const projects: Project[] = [
     blurb:
       "The largest project of my career: building and maintaining web interfaces in an enterprise environment, from content deployment and CMS work to debugging in production.",
     tags: ["Full-Stack", "PHP & MySQL", "Enterprise CMS"],
-    link: "https://zma-portfolio.netlify.app/casestudy-hdb",
+    // link: "/casestudy-hdb",  ← enable once this case study is added to src/caseStudies.ts
     accent: "#e07a5f",
   },
   {
@@ -60,7 +61,7 @@ export const projects: Project[] = [
     blurb:
       "Rich, interactive brand animations — first built in Flash, later migrated to HTML5 and CSS for performance, accessibility and long-term compatibility.",
     tags: ["Animation", "WordPress", "Front-End"],
-    link: "https://zma-portfolio.netlify.app/casestudy-yeos",
+    // link: "/casestudy-yeos",  ← enable once this case study is added to src/caseStudies.ts
     accent: "#f2cc8f",
   },
   {

@@ -47,14 +47,14 @@ export default function Nav() {
         transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       >
         <nav className="container nav-inner" aria-label="Main">
-          <a href="#top" className="logo" onClick={() => setOpen(false)}>
+          <a href="/" className="logo" onClick={() => setOpen(false)}>
             zin<span>.</span>
           </a>
           <ul className="nav-links">
             {links.map((l) => (
               <li key={l.id}>
                 <a
-                  href={`#${l.id}`}
+                  href={`/#${l.id}`}
                   className={active === l.id ? "active" : ""}
                   onClick={() => setOpen(false)}
                 >
@@ -63,7 +63,7 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-          <a href="#contact" className="nav-cta">Let's talk</a>
+          <a href="/#contact" className="nav-cta">Let's talk</a>
           <button
             className="menu-btn"
             aria-label={open ? "Close menu" : "Open menu"}

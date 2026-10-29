@@ -95,13 +95,16 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
   const rotateX = useSpring(useTransform(my, [0, 1], [6, -6]), { stiffness: 200, damping: 20 });
   const rotateY = useSpring(useTransform(mx, [0, 1], [-6, 6]), { stiffness: 200, damping: 20 });
   const [hover, setHover] = useState(false);
+  // Links starting with "/" are pages of this site (case studies) and open in the same tab.
+  const internal = p.link?.startsWith("/") ?? false;
+  const cta = !p.link ? null : internal ? "Read case study" : "Visit website";
 
   return (
     <Reveal delay={(index % 2) * 0.12}>
       <motion.a
         href={p.link}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={p.link && !internal ? "_blank" : undefined}
+        rel={p.link && !internal ? "noopener noreferrer" : undefined}
         className="project"
         style={{ rotateX, rotateY, transformPerspective: 1000 }}
         onPointerMove={(e) => {
@@ -137,14 +140,16 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
             </>
           )}
         </div>
-        <motion.span
-          className="arrow"
-          aria-hidden
-          animate={{ scale: hover ? 1 : 0, rotate: hover ? 0 : -45 }}
-          transition={{ duration: 0.35, ease }}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M8 7h9v9" /></svg>
-        </motion.span>
+        {p.link && (
+          <motion.span
+            className="arrow"
+            aria-hidden
+            animate={{ scale: hover ? 1 : 0, rotate: hover ? 0 : -45 }}
+            transition={{ duration: 0.35, ease }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M8 7h9v9" /></svg>
+          </motion.span>
+        )}
         <div className="project-body">
           <div className="project-meta">
             <span>{p.client}</span>
@@ -157,6 +162,11 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
               <span className="tag" key={t}>{t}</span>
             ))}
           </div>
+          {cta && (
+            <span className="project-cta">
+              {cta} <motion.span aria-hidden animate={{ x: hover ? 6 : 0 }} transition={{ duration: 0.3 }}>→</motion.span>
+            </span>
+          )}
         </div>
       </motion.a>
     </Reveal>
